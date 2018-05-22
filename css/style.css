@@ -28,7 +28,8 @@
     background-size: cover,cover, contain, contain;
     background-position:0 -2.5rem, 0 -3.2rem, 0 0.62rem, 0 0;
     margin-top: -1.07rem;
-    padding: 0 0.3rem 0 0.3rem;
+    padding: 0 0.3rem 1.7rem 0.3rem;
+    margin-bottom:4.09rem;
 }
 
 .container_top {
@@ -178,6 +179,9 @@
     padding-bottom: 0.6rem;
     position: relative;
 }
+.dataList:last-child{
+    padding: 0;
+}
 
 .times {
     text-align: right;
@@ -268,4 +272,40 @@
 
 .oneHundred .djq_img {
     background: #fe88ab;
+}
+
+.footer{
+    height:4.59rem;
+    background:url("../images/foot_bj.png");
+    background-size: cover;
+    position: absolute;
+    bottom:0;
+    width:100%;
+}
+.footer_title{
+    display: flex;
+    align-items: center;
+    padding:0.49rem 2.35rem 0.34rem;
+}
+.footer_title_hb{
+    width:0.49rem;
+    height:0.48rem;
+}
+.footer_title_tt{
+    width:1.42rem;
+    height:0.35rem;
+    margin:0 0.2rem;
+}
+.footer_info{
+    padding:0 0.35rem 0 0.2rem;
+}
+.footer_info p{
+    font-family: STYuanti-SC-Regular;
+    font-size: 0.28rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #ffffff;
+    text-shadow: 0 0.03rem 0 rgba(76,42,210,0.25);
+    line-height: 0.44rem;
 }
