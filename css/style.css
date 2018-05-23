@@ -15,13 +15,33 @@
     clear: both;
     height: 0;
 }
-
+@font-face {
+    font-family: PingFangSC-Regular;
+    src: url("PingFang-Regular.ttf");
+}
 .header {
     height: 4.38rem;
     background: url("../images/banner.png");
     background-size: cover;
 }
+.getQualification{
+    text-align: center;
+    padding-top:2.12rem;
+    display: none;
+}
+.getQualification button{
+    width:4rem;
+    height:0.88rem;
+    border:none;
+    outline:none;
+    border-radius:0.44rem;
+    background-image: linear-gradient(-90deg,
+    #9472ff 0%,
+    #7f96fe 100%);
+    color:#fff;
+    font-size:0.32rem;
 
+}
 .container {
     background: url("../images/bj2.png") bottom, url("../images/bj1.png") top, url("../images/cloud2.png") top, url("../images/cloud1.png") top;
     background-repeat: no-repeat;
@@ -174,10 +194,12 @@
 }
 
 .dataList {
-    display: flex;
-    align-items: center;
     padding-bottom: 0.6rem;
     position: relative;
+}
+.dataList>div:first-child{
+    display: flex;
+    align-items: center;
 }
 .dataList:last-child{
     padding: 0;
@@ -227,24 +249,50 @@
     text-align: center;
     margin-left: 0.3rem;
 }
-
+.status>span{
+    color:#8a98f5;
+}
 .lines {
     position: absolute;
     left: 1.4rem;
-    top: 0;
+    top: 0.62rem;
     border-right: 0.04rem solid #8d7efe;
-    height: 1.8rem;
+    height: 1.78rem;
+}
+.missAdopt{
+    padding-bottom: 0;
+}
+.missAdopt .lines{
+    border-right: 0.04rem dashed #8d7efe;
+    height:2.83rem;
+}
+.missAdopt .status>span{
+    color:red;
 }
 
-.list .dataList:first-child .lines {
-    height: 1.21rem;
-    top: 0.58rem;
+.missAdopt .missTip{
+    display: block;
+    width:4.76rem;
+    height:0.95rem;
+    background: url("../images/missTip.png") no-repeat;
+    background-size:cover;
+    margin: 0.19rem 0 0.19rem 1.9rem;
+    color:#c30000;
+    padding:0.16rem 0 0.18rem 0.44rem;
 }
-
+.missTip{
+    display: none;
+}
+.missAdopt .missTip p{
+    line-height: 0.36rem;
+    font-size:0.24rem;
+}
 .list .dataList:last-child .lines {
-    height: 0.6rem;
+    height: 0rem;
 }
-
+.list div.waitingAdopt:last-child .lines{
+    height:1rem;
+}
 .waitingAdopt .status span:first-child {
     height: 1.14rem;
     background: url("../images/ly.png");
@@ -257,9 +305,9 @@
 .waitingAdopt .times {
     font-size: 0.48rem;
 }
-
 .waitingAdopt .lines {
-    height: 2.42rem;
+    height: 2.1rem;
+    top:0.92rem;
 }
 
 .waitingAdopt .status {
@@ -276,8 +324,8 @@
 
 .footer{
     height:4.59rem;
-    background:url("../images/foot_bj.png");
-    background-size: cover;
+    background:url("../images/foot_bj.png") no-repeat ;
+    background-size:contain;
     position: absolute;
     bottom:0;
     width:100%;
@@ -297,15 +345,181 @@
     margin:0 0.2rem;
 }
 .footer_info{
-    padding:0 0.35rem 0 0.2rem;
+    padding:0 0.48rem 0 0.2rem;
 }
-.footer_info p{
-    font-family: STYuanti-SC-Regular;
+.footer_info>div{
+    line-height: 0.46rem;
+    white-space: nowrap;
+}
+.footer_info>div>p{
+    white-space: normal;
+}
+.footer_info>div>p,.footer_info>div>span{
+    display: inline-block;
     font-size: 0.28rem;
     font-weight: normal;
     font-stretch: normal;
-    letter-spacing: 0px;
     color: #ffffff;
     text-shadow: 0 0.03rem 0 rgba(76,42,210,0.25);
-    line-height: 0.44rem;
+}
+.footer_info>div>span{
+    vertical-align: top;
+    letter-spacing: 0.03rem;
+}
+
+.model{
+    position: absolute;
+    width: 7.5rem;
+    height:100%;
+    background: rgba(0,0,0,0.5);
+    top:0;
+    z-index: 999;
+}
+.model_box{
+    width:5.78rem;
+    border-radius:0.3rem;
+    background: #8d7efe;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    color:#fff;
+    font-family: PingFangSC-Regular;
+    padding-bottom: 0.5rem;
+}
+.closeModel{
+    width:0.24rem;
+    height:0.24rem;
+    position: absolute;
+    top:0.18rem;
+    right:0.21rem;
+}
+.model_box_content_title{
+    font-size:0.36rem;
+    padding-top:0.39rem;
+}
+.model_box_content{
+    text-align: center;
+}
+.model_box_content_info{
+    padding-top: 0.5rem;
+}
+.model_box_content_info>p{
+    font-size:0.4rem;
+    font-weight:bold;
+}
+.model_box_content_info>span{
+    font-size:0.32rem;
+    padding-top: 0.1rem;
+}
+.model_box_content_input{
+
+}
+.model_input{
+    display: inline-block;
+    margin-bottom: 0.3rem;
+    margin-top: 0.4rem;
+}
+.model_input,.model_btn{
+    width:3.5rem;
+    height:0.88rem;
+    background: #fff;
+    border:none;
+    outline: none;
+    border-radius:0.44rem;
+}
+.model_input{
+    text-align: center;
+}
+.model_input::-webkit-input-placeholder{
+    text-align: center;
+    color:#ddd9ff;
+}
+.model_btn{
+    color:#8d7efe;
+}
+
+/*没有领取资格的类名 unregitered*/
+.unregitered .model_box_content_info>span{
+    display: none;
+}
+.unregitered .model_box_content_input{
+    display: none;
+}
+.unregitered .model_box_content_info{
+    padding-top:0.77rem;
+    padding-bottom: 0.9rem;
+}
+.getTicket{
+    display: none;
+}
+.getTicket button{
+    width: 2.4rem;
+    height:0.88rem;
+    background: #fff;
+    color:#8d7efe;
+    border:none;
+    outline:none;
+    border-radius:0.44rem;
+}
+.unregitered .getTicket{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/*验证码输入错误的类名 codeError*/
+.codeError_tip{
+    display: none;
+}
+.codeError .codeError_tip{
+    display: block;
+    color:#e22a4b;
+    margin:0.2rem 0;
+}
+.codeError .model_focus{
+    border:1px solid #fff;
+    background: #a498fe;
+    margin-bottom:0;
+}
+/*输入正确的类名 success_model*/
+.success{
+    display: none;
+}
+.success_title{
+    display: none;
+}
+
+.model .success_model .success{
+    display: block;
+    width: 6.77rem;
+    height:2.87rem;
+    position: absolute;
+    left:-0.55rem;
+    top:-1.73rem;
+}
+.model .success_model .success_title{
+    display: block;
+    width: 4.17rem;
+    height:0.85rem;
+    position: absolute;
+    top:-0.43rem;
+    left:50%;
+    transform: translateX(-50%);
+}
+.model .success_model .closeModel{
+    display: none;
+}
+.model .success_model .model_box_content_info span{
+    display: none;
+}
+.model .success_model .model_box_content_title{
+    padding-top: 0.9rem;
+    font-size:0.32rem;
+    font-weight: normal;
+}
+.model .success_model .model_yzm{
+    display: none;
+}
+.model .success_model .model_box_content_info{
+    padding:0.5rem 0;
 }
